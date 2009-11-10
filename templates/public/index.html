@@ -1,0 +1,31 @@
+{% extends 'public/base.html' %}
+{% block content %}
+        <h4>Enter THOMAS Address:</h4>
+        <form action="/permalink/" method="GET">
+           <input id="search_box" name="url" type="text" size="50" value="{% if url %}{{ url.url }}{% endif %}">
+           <input type="submit" value="Get Permalink">
+        </form>
+		<h4>or enter bill number:</h4>
+		<form action="/handle" method="get">
+			<select name="congress">
+				<option value="111">111</option>
+				<option value="110">110</option>
+			</select>
+			<select name="bill_type">
+				<option value="hr">H.R.</option>
+				<option value="hres">H.RES.</option>
+				<option value="hconres">H.CON.RES.</option>
+				<option value="hjres">H.J.RES.</option>
+				<option value="s">S.</option>
+				<option value="sres">S.RES.</option>
+				<option value="sconres">S.CON.RS.</option>
+				<option value="sjres">S.J.RES.</option>
+			</select>
+			<input type="text" size="5" name="bill_id">
+			<input type="submit" value="Get Permalink">
+		</form>
+
+        <!--<h4>Bookmarklet</h4>
+		<a href="javascript:function getSelected(){var selectd='';if(window.getSelection){selectd=window.getSelection();}else if(document.getSelection){selectd = document.getSelection();}else if(document.selection){selectd=document.selection.createRange().text;}return selectd;}window.location.href='http://eleventy6.com:8000/handle/?bill_num='+getSelected();">PermaTom Bookmarklet</a>-->
+		<!--<a href="javascript:qs=null;var heads=document.getElementsByTagName('head');for(var i=0;i<heads.length;i++){var nodes=heads[i].childNodes;for(var j=0;j<nodes.length;j++){if(nodes[j].nodeType==8){qs=nodes[j].nodeValue;break;}}}var nodes=document.childNodes;for(var i=0;i<nodes.length;i++){if(nodes[i].nodeType==8){qs=nodes[i].nodeValue;break;}}window.location.href='http://eleventy6.com:8000/permalink/?url='+location.href+'&qs='+qs.replace('#', '@').replace('#', '@');">PERMATOM!</a>-->
+{% endblock %}

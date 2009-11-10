@@ -1,0 +1,9 @@
+{% extends 'public/base.html' %}
+{% block content %}
+    {% if handle_url %}
+        <h2>{{ handle_url }}</h2>
+    {% else %}
+        Error
+    {% endif %}
+	<p><a href="/">Again</a></p>
+{% endblock %}

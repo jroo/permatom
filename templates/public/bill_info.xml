@@ -1,0 +1,19 @@
+<xml>
+	<bills>
+		<bill>
+		{% if bill_info %}
+			<uri>{{ bill_info.uri }}</uri>
+			<congress>{{ bill_info.congress }}</congress>
+			<bill_id>{{ bill_info.friendly_id }}</bill_id>
+			<sites>
+				<site name="Open Congress" url="{{ bill_info.oc_url }}"/>
+				<site name="Govtrack" url="{{ bill_info.gt_url }}"/>
+				<site name="THOMAS" url="{{ bill_info.th_url }}"/>
+			</sites>
+			<apis>
+				<api name="Open Congress" format="xml" url="{{ bill_info.oc_api_url }}"/>
+			</apis>
+		{% endif %}
+		</bill>
+	</bills>
+</xml>

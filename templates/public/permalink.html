@@ -1,0 +1,13 @@
+{% extends 'public/base.html' %}
+{% block content %}
+    {% if permalink %}
+        <h2><a href="{{ permalink }}">http://permatom.com{{ permalink }}</a></h2>
+        {% if thomas_handle %}
+            <h4>THOMAS: {{ thomas_handle }}</h4>
+        {% endif %}
+    {% else %}
+        URL format is currently unsupported
+    {% endif %}
+    <p>Source: {{ source_url }}</p>
+	<p><a href="/">Again</a></p>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'public/base.html' %}
+{% block subtitle %}{{ bill_info.friendly_id }}{% endblock %}
+{% block content %}
+    {% if bill_info %}
+        <h2>{{bill_info.friendly_id}}</h2>
+		<h4>Shortcuts</h4>
+		<ul>
+			<li>THOMAS: <a href="{{ bill_info.shortcut }}">http://{{ domain }}{{ bill_info.shortcut }}</a></li>
+			<li>Open Congress: <a href="{{ bill_info.shortcut}}oc/">http://{{ domain }}{{ bill_info.shortcut }}oc/</a></li>
+			<li>Govtrack: <a href="{{ bill_info.shortcut }}gt/">http://{{ domain }}{{ bill_info.shortcut }}gt/</a></li>
+		</ul>
+		<h4>Permalinks</h4>
+		<ul>
+			<li>Open Congress: <a href="{{ bill_info.oc_url }}">{{ bill_info.oc_url }}</a></li>
+			<li>Govtrack: <a href="{{ bill_info.gt_url }}">{{ bill_info.gt_url }}</a></li>
+			<li>THOMAS: <a href="{{ bill_info.th_url }}">{{ bill_info.th_url }}</a></li>
+		</ul>
+		<h4>APIs</h4>
+		<ul>
+			<li>Open Congress*: <a href="{{ bill_info.oc_api_url }}">{{ bill_info.oc_api_url }}</a></li>
+		</ul>
+		* requires your API key
+		<ul>
+			<li><a href="./index.xml">XML</a></li>
+			<li><a href="./index.json">JSON</a></li>
+		</ul>
+    {% else %}
+        Bill not found
+    {% endif %}
+	<p><a href="/">Do it again!</a></p>
+{% endblock %}

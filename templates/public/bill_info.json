@@ -1,0 +1,1 @@
+[{'uri':'{{ bill_info.uri }}', 'congress':'{{ bill_info.congress }}', 'bill_id':'bill_info.friendly_id', 'sites':[{'name':'Open Congress', 'url':'{{ bill_info.oc_url }}'}, {'name':'Govtrack':'{{ bill_info.gt_url }}'}, {'THOMAS':'{{ bill_info.th_url }}'}], 'apis':{'name':'Open Congress', 'format':'xml', 'url':'{{ bill_info.oc_api_url }}'}}
